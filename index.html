@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
 
@@ -20,25 +21,56 @@
     <script type="text/babel">
         const appRoot = document.querySelector("#application-root");
 
-        function Sally() {
+        function Sally(props) {
             return (
                 <div>
-                    <h1>Sally Student</h1> <p>I'm an aspiring full stack web developer. I love cats, coding, and crocheting.</p>
-                    <h2>Skills</h2>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>jQuery</li>
-                    </ul>
-                    <h2>Contact Info</h2>
-                    <p>Twitter: <a href="https://twitter.com/sallyStudent">@sallyStudent</a></p>
+                    <header>
+                        <h1>{props.name}</h1> <p>I'm an aspiring full stack web developer. I love cats, coding, and crocheting.</p>
+                    </header>
+                    <main>
+                        <img src="./Sally.jpg" />
+                        <section>
+                            <h2>Skills</h2>
+                            <ul>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>jQuery</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2>Education</h2>
+                            <ul>
+                                <li>Sunnyhills High school: 2005-2009</li>
+                                <li>Sunnyhills Junior College: 2009-2011</li>
+                                <li>Arizona State University: 2012-2015</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2>Employment History</h2>
+                            <ul>
+                                <li>Microsoft Field Division<br />Position: Field Recruiter<br />Description: Prosepected junior developers for employment at Microsoft<br />Years Active: 2015-2017</li>
+                                <li>Apple Coroporate Office<br />Position: Junior Developer<br />Description: Helped develop front end applications along side lead developers<br />Years Active: 2017-2019</li>
+                                <li>Google Inc<br />Position: Lead Software Engineer<br />Description: Software Manager for a team of 10 junior developers< br />Years Active: 2019-Present</li>
+                            </ul>
+
+                        </section>
+
+                        <address>
+                            <h2>Contact Info</h2>
+                            Name: {props.name}
+                            Phone: 714-774-1234
+                            Email: sallyStudent@gmail.com
+                        <p>Twitter: <a href="https://twitter.com/sallyStudent">@sallyStudent</a></p>
+                        </address>
+                    </main>
                 </div>
             );
-
         };
         ReactDOM.render(
-            <Sally />, appRoot
+            <Sally name="Sally Student " />, appRoot
         );
     </script>
 
